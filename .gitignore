@@ -2,6 +2,4 @@
 notebooks/.ipynb_checkpoints
 .env
 .env.leave
-*.py
-*.txt
-README.md
+zipline
