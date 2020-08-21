@@ -3,15 +3,15 @@ from matplotlib import pyplot as plt
 from joblib import load
 import pandas as pd
 import numpy as np
+import pyfolio as pf
 from datetime import datetime
 import pytz
 
-import pandas as pd
 
 
 class BuyAndHold:
     stocks = ['AAPL']
-    lag = 33
+    lag = 32
     forecast = 8
 
     def initialize(self, context):
@@ -44,8 +44,8 @@ class BuyAndHold:
 
     def _test_args(self):
         return {
-            'start': pd.Timestamp('2000-1-1', tz='utc'),
-            'end': pd.Timestamp('2018-3-27', tz='utc'),
+            'start': pd.Timestamp('2015-5-13', tz='utc'),
+            'end': pd.Timestamp('2018-3-15', tz='utc'),
             'capital_base': 1e5
         }
 
@@ -53,15 +53,15 @@ class BuyAndHold:
         fig = plt.figure()
         ax1 = fig.add_subplot(211)
         perf.portfolio_value.plot(ax=ax1)
-        ax1.set_ylabel('Portfolio value in EUR')
+        ax1.set_ylabel('Portfolio value in USD')
 
         ax2 = fig.add_subplot(212)
         perf['AAPL'].plot(ax=ax2)
 
-        ax2.set_ylabel('price in EUR')
+        ax2.set_ylabel('price in USD')
         plt.legend(loc=0)
         plt.show()
 
         # returns, positions, transactions = pf.utils.extract_rets_pos_txn_from_zipline(perf)
-        # pf.create_returns_tear_sheet(returns, benchmark_ret=None)
+        # pf.create_returns_tear_sheet(returns, benchmark_rets=None)
 
