@@ -19,7 +19,7 @@ class BuyAndHold:
         context.stocks = self.stocks
         context.asset = symbol('AAPL')
         set_benchmark(False)
-        context.regressor = load('./strategies/models/rfr_regressor.joblib')
+        context.regressor = load('./strategies/models/gbr_regressor.joblib')
 
     def handle_data(self, context, data):
         for stock in context.stocks:
@@ -40,7 +40,7 @@ class BuyAndHold:
         if max_price < historical_mean:
             order(symbol(stock), -100)
 
-        record(AAPL=data.current(context.asset, 'price'))
+        record(price=data.current(context.asset, 'price'))
 
     def _test_args(self):
         return {
@@ -62,6 +62,6 @@ class BuyAndHold:
         plt.legend(loc=0)
         plt.show()
 
-        # returns, positions, transactions = pf.utils.extract_rets_pos_txn_from_zipline(perf)
-        # pf.create_returns_tear_sheet(returns, benchmark_rets=None)
+        returns, positions, transactions = pf.utils.extract_rets_pos_txn_from_zipline(perf)
+        pf.create_returns_tear_sheet(returns, benchmark_rets=None)
 

@@ -2,8 +2,6 @@ from toolz import merge
 from zipline import run_algorithm
 from zipline.utils.calendars import register_calendar, get_calendar
 from strategies.buy_and_hold import BuyAndHold
-from strategies.scalping import ScalpBollingerBand
-from strategies.dual_mavg import DualMovingAverage
 from os import environ
 
 
