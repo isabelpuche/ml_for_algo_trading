@@ -15,39 +15,39 @@ Hence, the project takes a four-step approach:
 For such purpose, we use a locally installed Zipline research environment for trading sponsored by Quantopian,inc and employ different ML techniques such as random forests, gradient boosting, support vector machines and kernel density estimations.<br>
 
 
-# Installation
+## Installation
 
 A conda environment has been created in order to (i) run Zipline in a Python version 3.5 environment, (ii) isolate Zipline's dependencies and (iii) control for possible interactions with base environment. For further details, please visit [Zipline Install](https://www.zipline.io/install.html).<br>
 
 A file `environment.yml` has also been included in the dossier for replication purposes.<br>
 
 
-# Folder's structure
+## Folder's structure
 
-`project's report`
+### project's report
 This file summarises the project set-up, implementation and key findings, namely (i) problem statement, (ii) trading and backtesting: concepts and libraries, (iii) methodological approach, (iv) technical and technological specifications and pitfalls, (v) project development, (vi) main findings and conclusions and (vii) the way forward.<br>
 
-`notebooks`
+### notebooks
 The notebooks contain a step-by-step project's narrative and implementation:
 <ol>
-    <li>`01_eda_quandl.ipynb`: you would find data bundle ingestion and loading, exploratory data analysis and time series analysis. Albeit the provision of US equities' financial series by Quandl (the bundle used for this project), Zipline allows for custom data bundles ingestion, so a testimonial exercise with REPSOL (IBEX35) equity has also been added.</li>
-    <li>`02_ta_strategy.ipynb`: contains definition and backtesting of the dual moving average crossover trading strategy</li>
-    <li>`03_ml_strategy.ipynb` enshrines feature's engineering, ML model design, training and selection. After the trading order based on price prediction has been executed (python scripts), model backtesting has been performed in the notebook</li>
-    <li>`04_trading_viz.ipynb`: displays graphs and creates a web page for visualisation purposes.
+    <li>`01_eda_quandl`: you would find data bundle ingestion and loading, exploratory data analysis and time series analysis. Albeit the provision of US equities' financial series by Quandl (the bundle used for this project), Zipline allows for custom data bundles ingestion, so a testimonial exercise with REPSOL (IBEX35) equity has also been added.</li>
+    <li>`02_ta_strategy`: contains definition and backtesting of the dual moving average crossover trading strategy</li>
+    <li>`03_ml_strategy` enshrines feature's engineering, ML model design, training and selection. After the trading order based on price prediction has been executed (python scripts), model backtesting has been performed in the notebook</li>
+    <li>`04_trading_viz`: displays graphs and creates a web page for visualisation purposes.
 </ol>
 
-`images`
+### images
 Pics of trading order's execution results and backtest graphs to be used for visualisation purposes.<br>
 
-`reports`
+### reports
 Reports issued from order's execution are saved in this file.<br>
 
-`strategies`
+### strategies
 Python scripts for the <i>buy-and-hold</i> strategy are located here as well as a folder for ML models saved.<br>
 
 
-# Main findings and conclusions
-## Findings
+## Main findings and conclusions
+### Findings
 <ul>
     <li>AAPL time series show a clear rising trend from summer 2016 onwards, thus triggering mostly buying signals along the way,</li>
     <li>trading signals vary in a 1:3 proportion according to trading strategy: (i) 26 signals stemming from arithmetic moving averages crossover in front of (ii) 80 signals (out 635 days for a 8-day trading window) from ML stock's prediction,</li>
@@ -55,26 +55,26 @@ Python scripts for the <i>buy-and-hold</i> strategy are located here as well as 
     <li>As a consequence, more capital has been fueled-in and capitalised in ML based strategy compared to TA strategy. This leads to extraordinary benefits but as analysed in conclusions also extraordinary drawdowns (on grounds of volatility).</li>
 </ul>
 
-<img><src='/home/isabel/Repos/ml_for_algo_trading/images/viz/TA_strategy.png'>
-<img><src='/home/isabel/Repos/ml_for_algo_trading/images/viz/ML_strategy.png'>
+![TA Strategy](/home/isabel/Repos/ml_for_algo_trading/images/viz/TA_strategy.png)
+![ML Strategy](/home/isabel/Repos/ml_for_algo_trading/images/viz/ML_strategy.png)
 
 As such, the following conclusions have been raised.<br>
 
 
-## Conclusions
+### Conclusions
 Comparing ml strategy with ta strategy:
 <ol>
     <li>important cumulative returns accruing to ML strategy (6049%) compared to TA strategy (34%) over the period
-        <img><src='/home/isabel/Repos/ml_for_algo_trading/images/viz/cumulative_returns.png'></li>
+        ![cumulative_returns](/home/isabel/Repos/ml_for_algo_trading/images/viz/cumulative_returns.png)</li>
     <li>distribution of returns (yoy and mom) show that negative and positive returns in ta strategy are incommensurate in ml strategy.
-	<img><src='/home/isabel/Repos/ml_for_algo_trading/images/viz/returns_distribution.png'></li>
+	![returns_distribution](/home/isabel/Repos/ml_for_algo_trading/images/viz/returns_distribution.png)</li>
     <li>volatility has been very high from mid-2016 until mid-2017 skyrocketting at impossible levels of 10.080%. This also reflects on the variability of the rolling sharpe ratio measure (excess return over volatility), which depending on the dimension of both elements, it can be either positive or negative
-	<img><src='/home/isabel/Repos/ml_for_algo_trading/images/viz/rolling_volatility.png'></li>
+	![rolling_volatility](/home/isabel/Repos/ml_for_algo_trading/images/viz/rolling_volatility.png)</li>
     <li>drawdown periods of ml and ta strategies do not overlap. The former coincide in time with price volatility whereas the latter occur at the beginning of the period (until the beginning of 2017), when portfolio value compensate for losses. The maximum drawdown is set to -418% for ml strategy.
-	<img><src='/home/isabel/Repos/ml_for_algo_trading/images/viz/drawdowns.png'></li>
+	![drawdowns](/home/isabel/Repos/ml_for_algo_trading/images/viz/drawdowns.png)</li>
 </ol>
 
-# Future Steps
+## Future Steps
 
 At this stage, it is rather obvious that the ML strategy is better than the TA strategy in reaping the momentum benefits of a positive trend but on the contrary, it leads to a setback during negative trends. Hence, the trading strategy should address the following, among others:
 <ul>
