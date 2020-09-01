@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Backtest Results</title>
+</head>
+<body>
+    <h1>Backtest Results M/Ms {{name}}</h1>
+
+    <h2>1. Portfolio Values</h2>
+    <img src="{{ url_for('static', filename='strategies.png') }}">
+
+    <h2>2. Backtest</h2>
+    <img src="{{ url_for('static', filename='backtest.png') }}">
+
+</body>
+</html>
