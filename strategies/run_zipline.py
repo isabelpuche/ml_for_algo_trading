@@ -2,6 +2,7 @@ from toolz import merge
 from zipline import run_algorithm
 from zipline.utils.calendars import register_calendar, get_calendar
 from strategies.buy_and_hold import BuyAndHold
+from strategies.dma_revisit import DualMovingAverage
 from os import environ
 
 
@@ -48,6 +49,8 @@ def run_strategy(strategy_name):
 
     if strategy_name == 'buy_and_hold':
         mod = BuyAndHold()
+    elif strategy_name == 'dma_revisit':
+        mod = DualMovingAverage()
 
     register_calendar("YAHOO", get_calendar("NYSE"), force=True)
 

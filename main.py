@@ -7,7 +7,7 @@ def main():
     print("*** KSchool Master of Data Science ed.19 Capstone Project: Machine Learning for NYSE stocks Algorithmic Trading ***")
     print("*** Implement Buy and Hold Strategy***")
     perf = run_strategy('buy_and_hold')
-    perf.to_csv("reports/buy_and_hold_GB.joblib")
+    perf.to_csv("reports/buy_and_hold.csv")
 
 
 if __name__ == '__main__':
