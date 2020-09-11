@@ -20,36 +20,24 @@ For such purpose, we use a locally installed Zipline research environment for tr
 Under same trading conditions, no capital use constraints and stop loss, the following can be concluded:
 <ul>
     <li><b>Both strategies differ in performance...</b> TA strategy records cumulative returns of 109%, whereas ML strategy reports 6050%. Capital used at the end of the period amounts to 60,537 USD and 116,175 USD respectively, in line with non-existent capital constraints. Three factors explain this: (i) larger capital amounts used in ML strategy than in TA strategy, (ii) ML strategy goes long all the way whereas TA strategy goes short until the beginning of 2017 when price clearly uptrends and, (iii) an important drawdown occurs during the second half of 2016 (with no obvious explanations) and undermines returns.</li>
-
     <b>graph 1</b>: Trading Strategies<br>
     <img src="images/viz/readme/strategies.png"><br>
-
     <b>graph 2</b>: Cumulative returns<br>
     <img src="images/viz/readme/cumulative_returns.png"><br>
-
     <b>graph 3</b>: ML strategy shorts and longs count<br>
     <img src="images/viz/readme/shorts_longs.png"><br>
-
     <li><b>...and also in behaviour</b>. TA strategy performs very satisfactorily in 2015 (despite volatility), nosedives in 2016 and recovers in 2017. Selling signals under a negative price trend scenario seem to be triggered with lags, which could explain good results in 2015 and first half 2016 despite price downward trend. Reasonably enough, positive price trends consistently drives up returns (2017 - 2018). In turn, ML strategy performs poorly in 2015 – 2016 and skyrockets in 2017, after large capital amounts have poured in.<br>
-
 Volatility is very high in ML strategy in mid-2016, when there is a change in cumulated returns tendency. Sharpe ratio increases from mid-2017 onwards, consistent with exploding returns. In turn, volatility is subdued in TA Strategy.<br>
-
 Drawdowns are huge (-417%) in ML strategy and occur at the beginning of the trading period (until beginning 2017), when portfolio value does not compensate for losses. TA strategy’s drawdowns occur during the whole trading window and are non negligible (peaking at -70% at the beginning of 2017).</li><br>
-
+Other measures accounting for risk differences among strategies are risk exposure to trading positions and profit and losses. As appreciated, unit measures vary significantly accross strategies.<br>
     <b>graph 4</b>: Volatility and Sharpe ratio<br>
     <img src="images/viz/readme/rolling_volatility.png"><br>
-
     <b>graph 5</b>: Drawdowns<br>
     <img src="images/viz/readme/drawdowns.png"><br>
-
-Other measures accounting for risk differences among strategies are risk exposure to trading positions and profit and losses. As appreciated, unit measures vary significantly accross strategies.<br>
-
     <b>graph 6</b>: Trading positions' risk exposure<br>
     <img src="images/viz/readme/risk_exposure.png"><br>
-
     <b>graph 7</b>: TA and ML Profit and Loss<br>
     <img src="images/viz/readme/PnL.png"></li>
-
     <li><b>So that, strategies might not be comparable in the end</b>.Though it is true that ML is more powerful than TA for forecast analysis, we cannot, in light of the previous, conclude that both trading strategies are comparable, all the more so since basic risk management is lacking in these examples. That is also the reason, why profiling in financial domain is so important. There is no one-size-fits-all strategy for all investors but risk-adapted strategies.</li>
 
 </ul>
